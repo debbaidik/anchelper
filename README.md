@@ -1,6 +1,6 @@
 # anchelper
 
-A collection of helper functions for common tasks in R.
+Quick-reference helpers for control charts in R.
 
 ## Installation
 
@@ -9,10 +9,20 @@ A collection of helper functions for common tasks in R.
 remotes::install_github("debbaidik/anchelper")
 ```
 
+## Functions
+
+| Function | Description |
+|----------|-------------|
+| `constants(n)` | Compute control chart constants (d2, D, D1–D4, c2, A) for subgroup sizes |
+| `formulas(chart)` | Print LCL / CL / UCL formulas for R, mean, p, np, c, u charts |
+| `when()` | Quick-reference guide for choosing the right chart |
+
 ## Usage
 
 ```r
 library(anchelper)
-hello()
-#> "Hello, world! anchelper is ready."
+
+constants()        # constants for n = 2:10
+formulas("p")      # p-chart formulas
+when()             # which chart to use?
 ```

@@ -1,10 +1,12 @@
 Package: anchelper
-Title: ANC Helper Functions
+Title: ANC Helper – Control Chart Quick Reference
 Version: 0.1.0
 Authors@R: 
     person("Deb", "Baidik", role = c("aut", "cre"),
            email = "debbaidik@example.com")
-Description: A collection of helper functions for common tasks.
+Description: Quick-reference helpers for control charts: compute constants
+    (d2, D, D1-D4, c2, A), print LCL/CL/UCL formulas for R, mean, p, np,
+    c, u charts, and a guide for choosing the right chart.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
