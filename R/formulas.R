@@ -1,5 +1,5 @@
 #' List LCL, CL, UCL formulas
-#' @param chart optional: "R", "mean", "p", "np", "c", "u". NULL lists all.
+#' @param chart optional: "xbar", "S", "R", "mean", "p", "np", "c", "u". NULL lists all.
 #' @export
 formulas <- function(chart = NULL) {
   f <- list(
@@ -12,6 +12,20 @@ formulas <- function(chart = NULL) {
       "",
       "(Xbar,R) control region (PDF 8, OC function)",
       "  Xbar: mu0 -/+ A*sigma0 ;  R: D1*sigma0, d2*sigma0, D2*sigma0   [A = 3/sqrt(n), not stated in notes]"),
+    xbar = c(
+      "XBAR CHART (Mean chart; X-S/X-R notes). Plot subgroup means; 3 sigma = standard error sigma/sqrt(n)",
+      "  general        : LCL = mu - 3*sigma/sqrt(n)   CL = mu   UCL = mu + 3*sigma/sqrt(n)",
+      "  mu', sigma' known : mu' -/+ A*sigma',  CL = mu',  A = 3/sqrt(n)",
+      "  unknown, S-based  : xbb -/+ A1*sbar,   CL = xbb,  A1 = 3/(c2*sqrt(n))   [sigma_hat = sbar/c2]",
+      "  unknown, R-based  : xbb -/+ A2*Rbar,   CL = xbb,  A2 = 3/(d2*sqrt(n))   [sigma_hat = Rbar/d2]",
+      "  mu_hat = xbb = (1/m)*sum(xbar_i) ;  SE(mu_hat) = sigma/sqrt(m*n), estimated by sigma_hat/sqrt(m*n)"),
+    S = c(
+      "S-CHART (SD chart; s_i uses divisor n)   E(s) = c2*sigma, Var(s) = ((n-1)/n - c2^2)*sigma^2",
+      "  sigma' known : LCL = B1*sigma'  CL = c2*sigma'  UCL = B2*sigma'",
+      "  unknown      : LCL = B3*sbar    CL = sbar       UCL = B4*sbar    (sigma_hat = sbar/c2)",
+      "  B1 = c2 - 3*sqrt((n-1)/n - c2^2),  B2 = c2 + 3*sqrt((n-1)/n - c2^2),  B3 = B1/c2,  B4 = B2/c2",
+      "  Negative LCL -> 0 (s is positive)",
+      "  SE(sigma_hat) = sigma/(c2*sqrt(m)) * sqrt((n-1)/n - c2^2); estimate with sigma_hat"),
     mean = c(
       "MEAN CHART, exponential example (R-chart file)",
       "  theta' known  : LCL = theta'(1 - 3/sqrt(n))  CL = theta'  UCL = theta'(1 + 3/sqrt(n))",

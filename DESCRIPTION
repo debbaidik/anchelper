@@ -1,14 +1,7 @@
 Package: anchelper
-Title: ANC Helper – Control Chart Quick Reference
+Type: Package
+Title: Control Chart Cheat Sheet (Formulas, When-to-Use, Constants)
 Version: 0.1.0
-Authors@R: 
-    person("Deb", "Baidik", role = c("aut", "cre"),
-           email = "debbaidik@example.com")
-Description: Quick-reference helpers for control charts: compute constants
-    (d2, D, D1-D4, c2, A), print LCL/CL/UCL formulas for R, mean, p, np,
-    c, u charts, and a guide for choosing the right chart.
-License: MIT + file LICENSE
+Description: Prints control chart formulas, guidance on which chart to use, and constants, based on the class notes.
+License: GPL-3
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
-Depends: R (>= 4.1.0)

@@ -24,12 +24,18 @@ VARIABLE n (p, np, u): pick one approach
   (d) Standardized Z        : exact, uniform basis, limits -3/0/+3; loses original scale
 
 ESTIMATORS
-  sigma_hat = Rbar/d2 or sbar/c2
+  sigma_hat = Rbar/d2 or sbar/c2 (both unbiased); mu_hat = xbb (unbiased, Var = sigma^2/(m*n))
+  Notes define s with divisor n: s^2 = (1/n)*sum(x - xbar)^2, so E(s^2) = (n-1)/n*sigma^2
   p  : MME  pbar = (1/m)*sum(d_i/n_i)   (used in notes' approach (a))
        MLE  pbar = sum(d_i)/sum(n_i)    (approaches (b),(c),(d); MVUE; preferred; equal if n constant)
   c  : size 1: lambda_hat = cbar ;  n units: lambda_hat = sum(c_i0)/(m*n)
   u  : MME  ubar = (1/m)*sum(u_i)  ;  MLE lambda_hat = sum(c_i0)/sum(n_i) (preferred when n varies)
   Mean chart (exponential): theta_hat = xbb, Var(theta_hat) = theta^2/(m*n)
+
+PRACTICAL ORDER (X-S / X-R)
+  1. Build S (or R) chart for variability.  2. Check it is in control.  3. Only then build Xbar chart.
+  Xbar limits involve sigma, so if variability is out of control the Xbar chart is meaningless.
+  Range is poor when there are outliers (and for large n); S preferred then.
 
 JUDGING CONTROL (PDF 8)
   In control only if all points inside limits AND scattered randomly.
