@@ -1,0 +1,12 @@
+Package: anchelper
+Title: ANC Helper Functions
+Version: 0.1.0
+Authors@R: 
+    person("Deb", "Baidik", role = c("aut", "cre"),
+           email = "debbaidik@example.com")
+Description: A collection of helper functions for common tasks.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: R (>= 4.1.0)
